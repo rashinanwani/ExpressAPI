@@ -4,46 +4,17 @@ var Request = require('tedious').Request;
 var connection;
 var str_data = "";
 
-// module.exports = {
-//   connect : function connect() {
-//   const sequelize = new Sequelize('Server Lookup', '754725', 'Password@123', {
-//   host: 'LT079861\\SQLEXPRESS',
-//   dialect: 'mssql',
-//     dialectOptions: {
-//     driver: "ODBC Driver 13 for SQL Server", 
-//     trustedConnection: "true"
-//   }
-// });
-// sequelize.authenticate();
-// }
-// }
-
-// Used to Connect to remote instance
-// var config = {
-//   server: "CPCINPUDV003505",
-//   options: {
-//     database: "testdb",
-//   },
-//   authentication: {
-//     type: "default",
-//     options: {
-//       userName: "Usr1",
-//       password: "1234567890",
-//     }
-//   }
-// }; 
-
 var config =
 {
-  server: "LAPTOP-DHF75SUF",
+  server: "yourServerName",
   options: {
     database: "HDDServer",
   },
   authentication: {
     type: "default",
     options: {
-      userName: "Usr1",
-      password: "1234567890"
+      userName: "yourUserName",
+      password: "yourPassWord"
     }
   },
   options: {
@@ -52,21 +23,6 @@ var config =
     //port:1433
   }
 };
-
-// var config = {
-//   server: 'lt079861azuresql.database.windows.net',
-//   options: {
-//     database: "testdb",
-//     encrypt: true
-//   },
-//   authentication: {
-//     type: "default",
-//     options: {
-//       userName: "azureuser1",
-//       password: "123qweasdZXC",   
-//     }
-//   }
-// };
 
 module.exports = {
   connect: function connect() {
