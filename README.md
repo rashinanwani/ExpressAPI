@@ -5,6 +5,10 @@ Install the npm packages for:
     Creating an api skeleton: npm install -g express-generator
 
     Connection with SQL Server: npm install tedious
+    
+Create an express app
+
+    express <app_name>
 
 Import variables
 
@@ -12,7 +16,7 @@ Import variables
     
     var Request = require('tedious').Request;
     
-Config for Sql Server
+Import Config for Sql Server
 
     config =
     {
@@ -33,22 +37,17 @@ Config for Sql Server
         //port:1433
       }
     };
-Connect api with Sql Server
+    
+For Connection of API with SQL Server
 
     connect: function connect() {
-      let data = [];
       connection = new Connection(config);
-      connection.on('connect', function (err, res) {
-
-        if (err) {
-          console.log('Not Connected')
-        }
-        else {
-          // If no error, then good to go...
-          console.log("Connected");
-        }
-      });
-
+      connection.on('connect', function (err, res) { YourCode....});
     }
+    
+For executing SQL queries 
+ 
+    request = new Request("YourQuery", function (err, res) { YourCode....});
+    connection.execSql(request);
   
-  To get more help on tedious functions visit http://tediousjs.github.io/tedious/api-connection.html
+  To get more help on request instances visit http://tediousjs.github.io/tedious/api-request.html and for tedious functions visit http://tediousjs.github.io/tedious/api-connection.html
